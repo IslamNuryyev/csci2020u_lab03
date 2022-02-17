@@ -1,0 +1,26 @@
+plugins {
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.apache.commons:commons-csv:1.9.0'   
+}
+
+mainClassName = 'csci2020u.lab02.CSVDemo'
+
+apply plugin : 'java'
+
+
+// Includes proguard from parent directory for tasks
+buildscript {
+    repositories {
+        flatDir dirs: '../../proguard-7.1.0-beta5/lib'
+    }
+    dependencies {
+        classpath ':proguard:'
+    }
+}
